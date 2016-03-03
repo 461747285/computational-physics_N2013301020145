@@ -17,6 +17,9 @@ Chinese? Cannot wirte any chinese characters in vim.
 - [x] Python compilers: Anaconda!
 - [x] update vim: k-vim
 
+##Figure
+![file-list](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/test2.png)
+
 ##Formula
 $$E = mc^2$$
 
@@ -30,4 +33,3 @@ $$E = mc^2$$
    print 'hello world'
 ```
 
-##Figures
