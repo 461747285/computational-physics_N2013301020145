@@ -55,7 +55,7 @@ main()
 ```
 
 ##Figure
-![file-list]()
+![file-list](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/circle.png)
 
 ##Formula
 $$E = mc^2$$
