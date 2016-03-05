@@ -6,6 +6,13 @@ This is the repository for computational physics course in the spring term of 20
 I will publish the homework here as well as some interesting programmes I wrote via Python 2.7.
 If you want to give some suggestions or point out errors in my programmes, please contact me at chenfengwhu@gmail.com 
 
+##Homework list
+- [ ]1.
+- [ ]2.
+- [ ]3.
+- [ ]4.
+- [ ]5.
+
 ##Todo list 
 - [x] install linux 
 - [x] Python compilers: Anaconda!
