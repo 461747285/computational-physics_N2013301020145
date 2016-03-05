@@ -7,11 +7,11 @@ I will publish the homework here as well as some interesting programmes I wrote 
 If you want to give some suggestions or point out errors in my programmes, please contact me at chenfengwhu@gmail.com 
 
 ##Homework list
-- [ ]1.
-- [ ]2.
-- [ ]3.
-- [ ]4.
-- [ ]5.
+- [ ] 1.
+- [ ] 2.
+- [ ] 3.
+- [ ] 4.
+- [ ] 5.
 
 ##Todo list 
 - [x] install linux 
