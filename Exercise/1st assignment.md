@@ -1,6 +1,7 @@
 # The first assignment for **Level One** and **Level Two**
 -------------------------
-## chenfeng      school number: 2013301020145
+### Chen Feng     
+### School Number: 2013301020145
 
 ##Abstract
 **This is the programme I design for users to enter words and it will display what they input in a special letter format**
@@ -81,16 +82,20 @@ main()
 ```
 
 ##Figures
-**Alphabet-design**
-![alphabet]()
+**Alphabet-design:**
+
+![alphabet](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/alphabet.png)
 
 **Name:**
+
 ![name](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/name.png)
 
 **Name_reverse:**
+
 ![name-reverse](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/name_reverse.png)
 
 **Other_display:**
+
 ![helloworld](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/hello_world.png)
 
 ##Conclusion
