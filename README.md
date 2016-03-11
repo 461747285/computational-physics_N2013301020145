@@ -70,6 +70,6 @@ $$E = mc^2$$
 ##Table
 |something|items|another things|
 |---------|----:|:------------:|
-|   A     |\$   | 12345        |
+|   ABC   |\$   | 12345        |
 
 
