@@ -1,4 +1,4 @@
-# The assignment for Exercise 3 **Level One** and **Level Two**
+# The assignment for Exercise 3 **Level 1** and **Level 2**
 -------------------------
 ### Name: Chen Feng     
 ### School Number: 2013301020145
