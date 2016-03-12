@@ -1,13 +1,13 @@
-# The assignment for Exercise 3 **Level 1** and **Level 2**
+# The assignment for Exercise 3
 -------------------------
 ### Name: Chen Feng     
 ### School Number: 2013301020145
 
 ##Abstract
-**This is the programme I design for users to enter words and it will display what they input in a special letter format**
+**Homework_L1&L2 is the programme I design for users to enter words and it will display what they input in a special letter format. Homework_L3 is the analog clock I design for exercise 3.**
 
 ##Introduction
-This is my first assignment of computational physics for Exercise1 level1 and level2. My programme aim to reproduce the
+This is my first assignment of computational physics for Exercise 3. My first programme aim to reproduce the
 words that input by the user (gerenally, their names) in the monitor via special big letters which constructed by '#'. 
 Instead of printing my name or designing those letters which only exist in my name, I worked out all the twenty six letters 
 directly as well as a blank space, because people used to entering a blank space to seperate their first name and last 
@@ -19,6 +19,9 @@ capital letters in your screen.
 
 As I have said before, I have only design 26 letters and a blank space, which means if you input other kinds of strings, 
 such as numbers, symbols, it would produce errors in the programme.
+
+In the second programme, I designed an analog clock. Firstly, we can change dial plate via editting the *initial.txt*. Also, we can change the symbols for hour hand, minute hand and second hand.
+Secondly, this clock read the local time in the computer, which means it is as accurate as the clock of your computer. However, due to the runing time of this programme, there are some problems occurring in the second hand. Thus, actually, we can regard it as a decoration instead of a real second hand.
 
 ##letter design
 First of all, I need to design 26 letters in the same size. For convenience, my letter sizes is 7'#'*7'#'. Actually, we
@@ -48,6 +51,8 @@ is comparably complicated for such small quantity of letters, I construct all th
 ![helloworld](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/hello_world.png)
 
 **Analog Clock:**
+
+![clock]()
 
 
 
