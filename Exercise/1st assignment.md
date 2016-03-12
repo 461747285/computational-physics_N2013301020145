@@ -51,8 +51,9 @@ is comparably complicated for such small quantity of letters, I construct all th
 ![helloworld](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/hello_world.png)
 
 **Analog Clock:**
+**'$$$$': is the hour hand;"\*\*\*\*": is the minute hand; '^^^^': is the second hand**
 
-![clock]()
+![clock](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/clock.png)
 
 
 
