@@ -25,61 +25,10 @@ First of all, I need to design 26 letters in the same size. For convenience, my 
 can design such 26 special letters in a txt file and then using the programe to read the letters. Considering this process 
 is comparably complicated for such small quantity of letters, I construct all the designs in the programe code directly.
 
-##Code
+##Code files
 **Here is my programe code**
-```python
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 9 09:12:16 2016
-@author: AF
-"""
-
-def alphabet_combine(string,length):
-    ####(('#######'),('#######'),('#######'),('#######'),('#######'),('#######'),('#######'))
-    pa =(('   #    '),(' #   #  '),('#     # '),('# ### # '),('#     # '),('#     # '),('#     # '))
-    pb =((' #####  '),('#     # '),('#     # '),('######  '),('#     # '),('#     # '),(' #####  '))
-    pc =((' #####  '),('#     # '),('#       '),('#       '),('#       '),('#     # '),(' #####  '))
-    pd =(('######  '),('#     # '),('#     # '),('#     # '),('#     # '),('#     # '),('######  '))
-    pe =(('####### '),('#       '),('#       '),('######  '),('#       '),('#       '),('####### ')) 
-    pf =(('####### '),('#       '),('#       '),('#####   '),('#       '),('#       '),('#       '))
-    pg =((' #####  '),('#       '),('#       '),('#   ### '),('#     # '),('#    ## '),(' #### # '))
-    ph =(('#     # '),('#     # '),('#     # '),('####### '),('#     # '),('#     # '),('#     # '))
-    pi =((' #####  '),('   #    '),('   #    '),('   #    '),('   #    '),('   #    '),(' #####  '))
-    pj =(('  ##### '),('     #  '),('     #  '),('     #  '),('     #  '),(' #   #  '),('  ###   '))
-    pk =(('#     # '),('#    #  '),('#   #   '),('####    '),('#   #   '),('#    #  '),('#     # '))
-    pl =((' #      '),(' #      '),(' #      '),(' #      '),(' #      '),(' #      '),(' #####  '))
-    pm =(('#     # '),('##   ## '),('# # # # '),('#  #  # '),('#     # '),('#     # '),('#     # ')) 
-    pn =(('#     # '),('##    # '),('# #   # '),('#  #  # '),('#   # # '),('#    ## '),('#     # ')) 
-    po =((' #####  '),('#     # '),('#     # '),('#     # '),('#     # '),('#     # '),(' #####  ')) 
-    pp =(('######  '),('#     # '),('#     # '),('######  '),('#       '),('#       '),('#       ')) 
-    pq =((' #####  '),('#     # '),('#     # '),('#     # '),('#   # # '),('#    #  '),(' #### # ')) 
-    pr =(('######  '),('#     # '),('#     # '),('######  '),('#   #   '),('#    #  '),('#     # ')) 
-    ps =((' ###### '),('#       '),('#       '),(' #####  '),('      # '),('      # '),('######  '))
-    pt =(('####### '),('   #    '),('   #    '),('   #    '),('   #    '),('   #    '),('   #    ')) 
-    pu =(('#     # '),('#     # '),('#     # '),('#     # '),('#     # '),('#     # '),(' #####  '))
-    pv =(('#     # '),('#     # '),('#     # '),(' #   #  '),(' #   #  '),('  # #   '),('   #    '))
-    pw =(('#     # '),('#     # '),('#  #  # '),('#  #  # '),('#  #  # '),('# # # # '),(' #   #  ')) 
-    px =(('#     # '),(' #   #  '),('  # #   '),('   #    '),('  # #   '),(' #   #  '),('#     # ')) 
-    py =(('#     # '),('#     # '),(' #   #  '),('  # #   '),('   #    '),('   #    '),('   #    '))
-    pz =(('####### '),('     #  '),('    #   '),('   #    '),('  #     '),(' #      '),('####### '))
-    p_ =(('        '),('        '),('        '),('        '),('        '),('        '),('        '))
-    dictionary = {' ':p_,'a':pa,'b':pb,'c':pc,'d':pd,'e':pe,'f':pf,'g':pg,'h':ph,'i':pi,'j':pj,'k':pk,'l':pl,'m':pm,'n':pn,'o':po,'p':pp,'q':pq,'r':pr,'s':ps,'t':pt,'u':pu,'v':pv,'w':pw,'x':px,'y':py,'z':pz}
-    screen = [' ']*7    
-    for j in range(7):
-        for i in range(length):
-            screen[j] = screen[j] + dictionary[string[i]][j]
-        print screen[j]    
-    return screen    
-    
-
-def main():
-    name = raw_input('please input your name:')
-    length = len(name)
-    name = name.lower()       
-    alphabet_combine(name,length)
-
-main()
-```
+-[Homework_L1&L2](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Homework_1%262.py)
+-[Homework_L3](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Homework_3.py)
 
 ##Figures
 **Alphabet-design:**
@@ -97,6 +46,10 @@ main()
 **Other_display:**
 
 ![helloworld](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/hello_world.png)
+
+**Analog Clock:**
+
+
 
 ##Conclusion
 Although this programme is not difficult, it provides us with an opportunity to create our own screen to display what we
