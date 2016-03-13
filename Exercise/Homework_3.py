@@ -52,7 +52,7 @@ def main():
         iscreen = read_initial('initial.txt')
         length = len(iscreen[0])
         width = len(iscreen)
-        fscreen = rotation((hours*30)-90,rotation((minutes*6)-90,rotation((seconds*60)-90,iscreen,length,'^',23),length,'*',22),length,'$',21)
+        fscreen = rotation(((hours+minutes/60)*30)-90,rotation((minutes*6)-90,rotation((seconds*6)-90,iscreen,length,'^',23),length,'*',22),length,'$',21)
         output_screen(length,width,fscreen)
         time.sleep(0.5)
         os.system('clear')
