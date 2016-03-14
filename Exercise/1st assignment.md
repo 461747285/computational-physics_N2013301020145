@@ -53,7 +53,7 @@ is comparably complicated for such small quantity of letters, I construct all th
 **Analog Clock:**
 **'$$$$': is the hour hand;"\*\*\*\*": is the minute hand; '^^^^': is the second hand**
 
-![clock](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/clock.png)
+![clock](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/clock.gif)
 
 
 
