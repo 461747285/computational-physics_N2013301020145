@@ -1,7 +1,7 @@
 # The assignment for Exercise 3
 -------------------------
 ### Name: Chen Feng     
-### School Number: 2013301020145
+### Student Number: 2013301020145
 
 ##Abstract
 **Homework_L1&L2 is the programme I design for users to enter words and it will display what they input in a special letter format. Homework_L3 is the analog clock I design for exercise 3.**
