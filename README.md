@@ -4,7 +4,7 @@
 ## Introduction
 **Name:陈锋**
 
-**School number: 2013301020145**
+**Student number: 2013301020145**
 
 This is the repository for computational physics course in the spring term of 2016 in Wuhan University. 
 I will publish the homework here as well as some interesting programmes I wrote via Python 2.7.
