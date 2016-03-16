@@ -13,11 +13,6 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 - [ ] 4.
 - [ ] 5.
 
-##Todo list 
-- [x] install linux 
-- [x] Python compilers: Anaconda!
-- [x] update vim: k-vim
-- [ ] update the repository
 
 ##Code
 ```python
@@ -64,12 +59,6 @@ main()
 ##Figure
 ![file-list](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/circle.png)
 
-##Formula
-$$E = mc^2$$
 
-##Table
-|something|items|another things|
-|---------|----:|:------------:|
-|   ABC   |\$   | 12345        |
 
 
