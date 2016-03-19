@@ -12,7 +12,7 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 
 ##Homework list
 - [x] [1.Exercise_3 with all levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
-- [ ] 2.
+- [x] [2.Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
 - [ ] 3.
 - [ ] 4.
 - [ ] 5.
