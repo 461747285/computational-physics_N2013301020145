@@ -27,17 +27,15 @@ Secondly, this clock read the local time in the computer, which means it is as a
 First of all, I need to design 26 letters in the same size. For convenience, my letter sizes is 7'#'*7'#'. Actually, we
 can design such 26 special letters in a txt file and then using the programe to read the letters. Considering this process 
 is comparably complicated for such small quantity of letters, I construct all the designs in the programe code directly.
+**Alphabet_design:**
+![alphabet](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/alphabet.png)
 
 ##Code files
 **Here is my programe code**
 -[Homework_L1&L2](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Homework_1%262.py)
 -[Homework_L3](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Homework_3.py)
 
-##Figures
-**Alphabet-design:**
-
-![alphabet](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/alphabet.png)
-
+##Results
 **Name:**
 
 ![name](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/name.png)
