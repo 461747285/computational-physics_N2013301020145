@@ -17,6 +17,10 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 - [ ] 4.
 - [ ] 5.
 
+##Ordinary differential equation solving package
+-[Instruction](https://www.zybuluo.com/355073677/note/323818)
+-[*ode.py*]()
+
 
 
 
