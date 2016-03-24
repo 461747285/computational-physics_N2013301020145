@@ -22,7 +22,7 @@ There are totally four kinds of algorithms in this package temporarily, includin
 On the other hand, this package can be also used to solve **differential equation systems**, which also means we can use this package to solve the higher order differential equation.
 - [x] [Instruction](https://www.zybuluo.com/355073677/note/323818)
 
-- [x] [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%201/ode.py)
+- [x] [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/ode_package/ode.py)
 
 
 
