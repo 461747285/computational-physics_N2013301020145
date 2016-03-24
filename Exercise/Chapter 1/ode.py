@@ -8,6 +8,7 @@ Created on Thu Mar 17 14:49:37 2016
 # reference MATLAB 语言常用算法程序集（第2版）
 
 import matplotlib.pyplot as plt
+import time
 
 class ode:
     def __init__(self,dx,a,b,Y):
@@ -114,6 +115,7 @@ class ode:
         return self.data  
         
     def eulers(self):                   ###calculate equations via Euler method
+#        tick_1 = time.time()
         self.x.append(self.a)           #
         for l in range(self.number):    ###
             self.y.append([])           ####    setting the initial valye
@@ -129,9 +131,11 @@ class ode:
             self.x.append(self.x[i - 1] + self.dx)
         self.data[0] = self.x
         self.data[1] = self.y
+#        print (time.time()-tick_1)
         return self.data
         
     def rgkt_3s(self):                  ### third order Runge_Kutta for equation systems
+#        tick_1 = time.time()
         self.x.append(self.a)           #
         for l in range(self.number):    ###
             self.y.append([])           ####    setting the initial valye
@@ -144,22 +148,21 @@ class ode:
                 for m in range(self.number + 1):
                     exec self.dep_name[m]
                 k1 = eval(self.f[j])
-                for e in range(self.number):
-                    self.dep_name[e + 1] = self.dep_name_record[e + 1] + '=' + str(self.y[e][i - 1] + k1*self.dx/2)
+                self.dep_name[j + 1] = self.dep_name_record[j + 1] + '=' + str(self.y[j][i - 1] + k1*self.dx/2)
                 self.dep_name[0] = self.dep_name_record[0] + '=' + str(self.x[i - 1]+self.dx/2)
-                for n in range(self.number + 1):
-                    exec self.dep_name[n]
+                exec self.dep_name[0]
+                exec self.dep_name[j + 1]
                 k2 = eval(self.f[j])
-                for f in range(self.number):
-                    self.dep_name[f + 1] = self.dep_name_record[f + 1] + '=' + str(self.y[f][i - 1] - k1*self.dx + 2*k2*self.dx)
+                self.dep_name[j + 1] = self.dep_name_record[j + 1] + '=' + str(self.y[j][i - 1] - k1*self.dx + 2*k2*self.dx)
                 self.dep_name[0] = self.dep_name_record[0] + '=' + str(self.x[i - 1] + self.dx)
-                for o in range(self.number + 1):
-                    exec self.dep_name[o]
+                exec self.dep_name[0]
+                exec self.dep_name[j + 1]
                 k3 = eval(self.f[j])
                 self.y[j].append(self.y[j][i - 1] + self.dx * (k1 + 4*k2 +k3)/6)
             self.x.append(self.x[i - 1] + self.dx)
         self.data[0] = self.x
         self.data[1] = self.y
+#        print (time.time()-tick_1)
         return self.data 
     
     def store(self):
@@ -182,6 +185,7 @@ A.set_fxs(['y2-y1','y1-y2'],'x',('y1','y2'))
 #A.rgkt_3()
 #plt.figure(figsize=(10,6),dpi = 144)
 record = []
+#record = A.eulers()
 record = A.rgkt_3s()
 A.store()
 plt.plot(record[0],record[1][0], label ='particle a')
