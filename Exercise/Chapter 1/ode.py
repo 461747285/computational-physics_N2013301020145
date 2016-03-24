@@ -2,14 +2,11 @@
 """
 Created on Thu Mar 17 14:49:37 2016
 @author: AF
-version 2.2
+version 2.3
 """
 # this package involve three numerical methods to solve ordinary differential equation.
 # they are Euler method, Crome-Euler method and Runge-Kutta method
 # reference MATLAB 语言常用算法程序集（第2版）
-
-import matplotlib.pyplot as plt
-import time
 
 class ode:
     def __init__(self,dx,a,b,Y):
@@ -17,8 +14,6 @@ class ode:
         self.a = a      # lower limit
         self.b = b      # upper limit
         self.Y = Y      # initial y
-        self.y = []
-        self.x = []
         self.N = int(float(self.b - self.a)/(self.dx))
         self.data = [[],[]] # store all the datas
         
@@ -42,6 +37,8 @@ class ode:
         if (self.number != 1):
             print 'this method cannot solve ode equation systems.'
             exit()
+        self.y = []
+        self.x = []
         self.y.append(self.Y)
         self.x.append(self.a)
         for i in range(1,self.N):
@@ -57,6 +54,8 @@ class ode:
         if (self.number != 1):
             print 'this method cannot solve ode equation systems.'
             exit()
+        self.y = []
+        self.x = []
         self.y.append(self.Y)
         self.x.append(self.a)
         for i in range(1,self.N):
@@ -75,6 +74,8 @@ class ode:
         if (self.number != 1):
             print 'this method cannot solve ode equation systems.'
             exit()
+        self.y = []
+        self.x = []
         self.y.append(self.Y)
         self.x.append(self.a)
         for i in range(1,self.N):
@@ -94,6 +95,8 @@ class ode:
         if (self.number != 1):
             print 'this method cannot solve ode equation systems.'
             exit()
+        self.y = []
+        self.x = []
         self.y.append(self.Y)
         self.x.append(self.a)
         for i in range(1,self.N):
@@ -113,6 +116,8 @@ class ode:
         return self.data  
         
     def eulers(self):                   ###calculate equations via Euler method
+        self.y = []
+        self.x = []
         self.x.append(self.a)           #
         for l in range(self.number):    ###
             self.y.append([])           ####    setting the initial valye
@@ -131,6 +136,8 @@ class ode:
         return self.data
         
     def rgkt_3s(self):                  ### third order Runge_Kutta for equation systems
+        self.y = []
+        self.x = []
         self.x.append(self.a)           #
         for l in range(self.number):    ###
             self.y.append([])           ####    setting the initial valye
@@ -178,25 +185,4 @@ class ode:
                 data_file.write(' ')
             data_file.write('\n')
         data_file.close  
-    
-    
-A = ode(0.05,0,1,1)
-#A.set_fxs(['y2-y1','y1-y2'],'x',('y1','y2'))
-A.set_fx('y','x','y')
-#A.euler()
-#A.eulerplus()
-#A.rgkt_2()  
-#A.rgkt_3()
-#plt.figure(figsize=(10,6),dpi = 144)
-record = []
-#record = A.eulers()
-#record = A.rgkt_3s()
-#record = A.eulerplus()
-record = A.rgkt_3()
-A.store()
-plt.plot(record[0],record[1], label ='particle a')
-#plt.plot(record[0],record[1][1], label ='particle b')
-plt.legend()
-plt.savefig('ode.png',dpi=144)  
-plt.show()      
-        
+
