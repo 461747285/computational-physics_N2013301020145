@@ -18,8 +18,9 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 - [ ] 5.
 
 ##Ordinary differential equation solving package
--[Instruction](https://www.zybuluo.com/355073677/note/323818)
--[*ode.py*]()
+- [x] [Instruction](https://www.zybuluo.com/355073677/note/323818)
+
+- [x] [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%201/ode.py)
 
 
 
