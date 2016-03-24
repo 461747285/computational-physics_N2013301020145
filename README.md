@@ -20,9 +20,9 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 ##Ordinary differential equation solving package
 There are totally four kinds of algorithms in this package temporarily, including *simple Euler method*, *modified Euler method*, *Second-order Runge-Kutta method*, *Third-order Runge-Kutta method*. 
 On the other hand, this package can be also used to solve **differential equation systems**, which also means we can use this package to solve the higher order differential equation.
-- [x] [Instruction](https://www.zybuluo.com/355073677/note/323818)
+ - [Instruction](https://www.zybuluo.com/355073677/note/323818)
 
-- [x] [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/ode_package/ode.py)
+ - [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/ode_package/ode.py)
 
 
 
