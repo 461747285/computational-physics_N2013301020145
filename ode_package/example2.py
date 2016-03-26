@@ -11,6 +11,10 @@ import math
 
 A = solving_ode.ode(0.005,3.8,4,(2,8))  
 A.set_fx(('y1','-x*y+y1*math.e**x+3*math.sin(2*x)'),['x','y','y1'])
+<<<<<<< HEAD
+=======
+euler_record = A.euler()
+>>>>>>> origin/master
 rgkt_3_record = A.rgkt_3()
 B = solving_ode.ode(0.005,3.8,4,(2,8))
 B.set_fx(('y1','-x*y+y1*math.e**x+3*math.sin(2*x)'),['x','y','y1'])
