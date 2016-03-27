@@ -2,7 +2,7 @@
 """
 Created on Thu Mar 17 14:49:37 2016
 @author: AF
-version 3.3
+version 3.1
 """
 # this package involve three numerical methods to solve ordinary differential equation.
 # they are Euler method, Crome-Euler method and Runge-Kutta method
@@ -136,18 +136,6 @@ class ode:
         self.data[0] = self.x
         self.data[1] = self.y
         return self.data 
- 
-    def avg_3s(self):                        ### average of simple euler method and Runge 3rd
-        record_s = self.euler()[:]
-        record_3 = self.rgkt_3()[:]
-        avg = []
-        for i in range(len(record_3[1])):
-            avg.append([])
-            for j in range(len(record_3[1][i])):
-                avg[i].append(0.5*record_s[1][i][j]+0.5*record_3[1][i][j])
-        self.data[0] = record_3[0]
-        self.data[1] = avg
-        return self.data
  
     def store(self,data__file):           #### save the calculculate datas            
         data_file = open(data__file,'w')
