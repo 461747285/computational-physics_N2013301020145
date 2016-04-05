@@ -14,8 +14,10 @@ If you want to give some suggestions or point out errors in my programmes, pleas
 - [x] [1.Exercise_3 with all levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
 - [x] [2.Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
 - [x] [3.Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
-- [ ] 4.
+- [x] [4.Chapter 2](https://www.zybuluo.com/355073677/note/331446)
 - [ ] 5.
+- [ ] 6.
+- [ ] 7.
 
 ##Ordinary differential equation solving package
 There are totally four kinds of algorithms in this package temporarily, including *simple Euler method*, *modified Euler method*, *Second-order Runge-Kutta method*, *Third-order Runge-Kutta method*. 
