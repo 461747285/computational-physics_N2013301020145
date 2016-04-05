@@ -4,7 +4,7 @@ Created on Wed Mar 30 11:37:59 2016
 @author: AF
 """
 
-import ode as solving_ode
+import time
 import math
 import matplotlib.pyplot as plt
 
@@ -25,12 +25,29 @@ def correct(string,y_t):           ##### delete all the data of (x,y) where y<0
     return string[0],string[1]
        
 def calculate(v,theta):
-    vx_0 = v * math.cos(theta*math.pi/180)
-    vy_0 = v * math.sin(theta*math.pi/180)
-    A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-    A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-    record = A.euler()[:]
-    return correct([record[1][0],record[1][2]],0)
+    vx = []
+    vy = []
+    vx.append( v * math.cos(theta*math.pi/180))
+    vy.append( v * math.sin(theta*math.pi/180))
+    dt = 0.1
+    t = []
+    x = []
+    y = []
+    t.append(0)
+    x.append(0)
+    y.append(0)
+    i = 1
+    while (y[-1] >= 0):
+        x.append(x[i - 1] + vx[i - 1]*dt)
+        vx.append(vx[i - 1] - dt*0.00004*700*vx[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
+        y.append(y[i - 1] + vy[i - 1]*dt)
+        vy.append(vy[i - 1]-9.8*dt -dt*0.00004*700*vy[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
+        t.append(t[i - 1] + dt)
+        i+= 1
+    r = y[-2] / y[-1]
+    x[-1] = (x[-2] + r * x[-1]) / (r + 1)
+    y[-1] = 0
+    return x, y
    
 def find_maxheight(string):
     for i in range(len(string[1])):
@@ -40,7 +57,7 @@ def find_maxheight(string):
 
 def scan_angle(v,theta, x_t, y_t, degree):
     ran_a = [20, 5, 2, 0.8, 0.2]
-    delta = [5, 1, 0.5, 0.1, 0.02]
+    delta = [1, 0.5, 0.1, 0.05, 0.01]
     theta = theta - ran_a[degree]
     theta_record = []
     x = []
@@ -64,7 +81,7 @@ def scan_angle(v,theta, x_t, y_t, degree):
 
 def scan_v(v,theta, x_target, y_target, degree):
     ran_v = [100, 10, 2, 0.8, 0.2]
-    delta = [20, 2, 0.5, 0.1, 0.02]
+    delta = [10, 2, 0.5, 0.1, 0.02]
     v = v - ran_v[degree]
     x = []
     theta_record = []
@@ -109,8 +126,9 @@ def judge_hitting(string,x_t,y_t):
 
                
 def main():
-    x_target = 800
-    y_target = 8000
+    start = time.clock()
+    x_target = 14000
+    y_target = 6000
 #    theta0 = 180*math.atan(y_target/x_target)/math.pi
     data_record = deep_scan(700,60,x_target,y_target,5)   ### 3 for grade 1, 4 for grade 2 and 5 for grade 3
     v = data_record[0]
@@ -118,16 +136,18 @@ def main():
     cannon_record = correct(calculate(v, theta),y_target)
     x_max = cannon_record[0][-1]
     judge_hitting(cannon_record,x_target,y_target)
-    print x_max
-    print theta
-    print v
+    print '%f ' % x_max
+    print '%f ' % theta
+    print '%f ' %v
+    end = time.clock()
+    print "read: %f s" % (end - start)
     plt.figure(figsize = (8,6))
     plt.title('Trajectory of cannon shell')
     plt.xlabel('x(m)')
     plt.ylabel('y(m)')
     plt.plot(x_target,y_target,'k*',linewidth = 10,label='Target')
     plt.plot(cannon_record[0],cannon_record[1],label= 'Trajectroy')
-    plt.legend()
+    plt.legend(loc = 'upper left')
     plt.savefig('chapter2.png',dpi = 144)
     plt.show()
         
