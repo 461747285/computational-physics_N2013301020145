@@ -39,9 +39,9 @@ def calculate(v,theta):
     i = 1
     while (y[-1] >= 0):
         x.append(x[i - 1] + vx[i - 1]*dt)
-        vx.append(vx[i - 1] - dt*0.00004*700*vx[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
+        vx.append(vx[i - 1] - dt*0.00004*math.sqrt(vx[i - 1]**2+vy[i - 1]**2)*vx[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
         y.append(y[i - 1] + vy[i - 1]*dt)
-        vy.append(vy[i - 1]-9.8*dt -dt*0.00004*700*vy[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
+        vy.append(vy[i - 1]-9.8*dt -dt*0.00004*math.sqrt(vx[i - 1]**2+vy[i - 1]**2)*vy[i - 1]*(1-(0.0065*y[i - 1])/280)**2.5)
         t.append(t[i - 1] + dt)
         i+= 1
     r = y[-2] / y[-1]

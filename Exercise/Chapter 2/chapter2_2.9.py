@@ -34,8 +34,7 @@ def scan1(theta,delta,ran):
         vx_0 = v * math.cos(theta*math.pi/180)
         vy_0 = v * math.sin(theta*math.pi/180)
         A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-        #A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-        A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
+        A.set_fx(['v_x','-0.00004*v_x*math.sqrt(v_x**2+v_y**2)*math.e**(-y/10000)','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
         x.append(correct(A.euler()[:])[1][0][-1])
         theta = theta + delta
         theta_record.append(theta)
@@ -54,8 +53,7 @@ def scan2(theta,delta,ran):
         vx_0 = v * math.cos(theta*math.pi/180)
         vy_0 = v * math.sin(theta*math.pi/180)
         A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-        A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-        #A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
+        A.set_fx(['v_x','-0.00004*math.sqrt(v_x**2+v_y**2)*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
         x.append(correct(A.euler()[:])[1][0][-1])
         theta = theta + delta
         theta_record.append(theta)
@@ -74,9 +72,7 @@ def scan3(theta,delta,ran):
         vx_0 = v * math.cos(theta*math.pi/180)
         vy_0 = v * math.sin(theta*math.pi/180)
         A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-        #A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-        #A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
-        A.set_fx(['v_x','-0.00004*700*v_x','v_y','-9.8-0.00004*700*v_y'],['t','x','v_x','y','v_y'])
+        A.set_fx(['v_x','-0.00004*math.sqrt(v_x**2+v_y**2)*v_x','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y'],['t','x','v_x','y','v_y'])
         x.append(correct(A.euler()[:])[1][0][-1])
         theta = theta + delta
         theta_record.append(theta)
@@ -88,9 +84,9 @@ def scan3(theta,delta,ran):
          
 
 ##---------------- Isothermal ---------------------------------
-#theta = 30
-theta = scan1(scan1(scan1(scan1(45,5,20),2,10),0.5,2),0.01,0.3)
-#theta = scan2(scan2(scan2(scan2(45,5,20),2,10),0.5,2),0.01,0.3)
+#theta = 45
+#theta = scan1(scan1(scan1(scan1(45,5,20),2,10),0.5,2),0.01,0.3)
+theta = scan2(scan2(scan2(scan2(45,5,20),2,10),0.5,2),0.01,0.3)
 plt.figure(figsize = (8,6))
 #plt.subplot(131)
 vx_0 = v * math.cos(theta*math.pi/180)
@@ -99,8 +95,8 @@ plt.title('Trajectory of cannon shell (Isothermal Correction)')
 plt.xlabel('x(m)')
 plt.ylabel('y(m)')
 A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-#A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
+#A.set_fx(['v_x','-0.00004*v_x*math.sqrt(v_x**2+v_y**2)*math.e**(-y/10000)','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
+A.set_fx(['v_x','-0.00004*math.sqrt(v_x**2+v_y**2)*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
 cannon_record = correct(A.euler()[:])
 x_max = cannon_record[1][0][-1]
 print x_max
@@ -110,31 +106,29 @@ plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta)
 #    vx_0 = v * math.cos(theta*math.pi/180)
 #    vy_0 = v * math.sin(theta*math.pi/180)
 #    A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-#    #A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-#    A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
+#    A.set_fx(['v_x','-0.00004*v_x*math.sqrt(v_x**2+v_y**2)*math.e**(-y/10000)','v_y','-9.8-0.00004*v_y*math.sqrt(v_x**2+v_y**2)*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
 #    cannon_record = correct(A.rgkt_3()[:])
 #    plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta))
 #    theta = theta +5
 #plt.legend(fontsize = 13)
 #plt.plot(25000,10000)
 ##---------------- Adiabatic -----------------------------------
-#theta = scan2(scan2(scan2(scan2(45,5,20),2,10),0.5,2),0.01,0.3)
-#theta = 30
+'''theta = scan2(scan2(scan2(scan2(45,2,20),2,10),0.5,2),0.01,0.3)
+theta = 30
 #plt.subplot(132)
-#plt.title('Trajectory of cannon shell (Adiabatic Correction)')
-#plt.xlabel('x(m)')
-#plt.ylabel('y(m)')
-#for j in range(6):
-#    vx_0 = v * math.cos(theta*math.pi/180)
-#    vy_0 = v * math.sin(theta*math.pi/180)
-#    A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-#    A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-#    #A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
-#    cannon_record = correct(A.euler()[:])
-#    plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta))
-#    theta = theta +5
-#plt.legend(fontsize = 13)
-#plt.plot(25000,10000)
+plt.title('Trajectory of cannon shell (Adiabatic Correction)')
+plt.xlabel('x(m)')
+plt.ylabel('y(m)')
+for j in range(6):
+    vx_0 = v * math.cos(theta*math.pi/180)
+    vy_0 = v * math.sin(theta*math.pi/180)
+    A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
+    A.set_fx(['v_x','-0.00004*v_x*math.sqrt(v_x**2+v_y**2)*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*math.sqrt(v_x**2+v_y**2)*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
+    cannon_record = correct(A.euler()[:])
+    plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta))
+    theta = theta +5
+plt.legend(fontsize = 13)
+plt.plot(25000,10000)'''
 ##---------------- no density correction ---------------------------------
 #theta = scan3(scan3(scan3(scan3(45,5,20),2,10),0.5,2),0.01,0.3)
 #theta = 30
@@ -146,9 +140,7 @@ plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta)
 #    vx_0 = v * math.cos(theta*math.pi/180)
 #    vy_0 = v * math.sin(theta*math.pi/180)
 #    A = solving_ode.ode(0.1,0,200,(0,vx_0,0,vy_0))
-#    #A.set_fx(['v_x','-0.00004*700*v_x*(1-(0.0065*y)/280)**2.5','v_y','-9.8-0.00004*700*v_y*(1-(0.0065*y)/280)**2.5'],['t','x','v_x','y','v_y'])
-#    #A.set_fx(['v_x','-0.00004*700*v_x*math.e**(-y/10000)','v_y','-9.8-0.00004*700*v_y*math.e**(-y/10000)'],['t','x','v_x','y','v_y'])
-#    A.set_fx(['v_x','-0.00004*700*v_x','v_y','-9.8-0.00004*700*v_y'],['t','x','v_x','y','v_y'])
+#    A.set_fx(['v_x','-0.00004*700*v_x*math.sqrt(v_x**2+v_y**2)','v_y','-9.8-0.00004*700*v_y*math.sqrt(v_x**2+v_y**2)'],['t','x','v_x','y','v_y'])
 #    cannon_record = correct(A.euler()[:])
 #    plt.plot(cannon_record[1][0],cannon_record[1][2],linewidth = 3, label=str(theta))
 #    theta = theta +5
