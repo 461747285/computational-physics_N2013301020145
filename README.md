@@ -18,11 +18,11 @@ On the other hand, this package can be also used to solve **differential equatio
  - [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/ode_package/ode.py)
  
 ##Homework list
-- [x] [1.Exercise_3 with all levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
-- [x] [2.Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
-- [x] [3.Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
-- [x] [4.Chapter 2 problem 2.9 & 2.10](https://www.zybuluo.com/355073677/note/331446)
-- [x] [5.Chapter 2 problem 2.19](https://www.zybuluo.com/355073677/note/339666)
+- [x] [Exercise_3: all levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
+- [x] [Exercise_4: Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
+- [x] [Exercise_5: Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
+- [x] [Exercise_6: Chapter 2 problem 2.9 & 2.10](https://www.zybuluo.com/355073677/note/331446)
+- [x] [Exercise_7: Chapter 2 problem 2.19 & Visual motion of baseball](https://www.zybuluo.com/355073677/note/339666)
 - [ ] 6.
 - [ ] 7.
 - [ ] 8.
