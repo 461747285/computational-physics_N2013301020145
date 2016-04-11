@@ -111,7 +111,7 @@ class baseball_fullspin(baseball_normal):
         while ( self.y[-1] >= self.y1 ):
             v = np.sqrt(vx[i - 1]**2+vy[i - 1]**2+vz[i - 1]**2)
             B = 0.0039 + 0.0058/(1 + np.e**((v - 35)/5))
-            vx.append(vx[i - 1] - B*self.dt*v*vx[i - 1] + 0.00041*(w_y*vz[i - 1] - w_z*vy[i - 1]*self.dt))
+            vx.append(vx[i - 1] - B*self.dt*v*vx[i - 1] + 0.00041*(w_y*vz[i - 1] - w_z*vy[i - 1])*self.dt)
             vy.append(vy[i - 1] - 9.8*self.dt - B*self.dt*v*vy[i - 1] +0.00041*(w_z*vx[i - 1] - w_x*vz[i - 1])*self.dt)
             vz.append(vz[i - 1] - B*self.dt*v*vz[i - 1] + 0.00041*(w_x*vy[i - 1] - w_y*vx[i - 1])*self.dt)
             self.x.append(self.x[i - 1] + 0.5*(vx[i - 1] + vx[i])*self.dt)
@@ -235,7 +235,7 @@ plt.title('Trajectory of cannon shell')
 plt.xlabel('Horizontal distance (m)', fontsize = 12)
 plt.ylabel('Vertical height (m)', fontsize = 12)
 ## ---------------- full spin ---------------------
-'''A = baseball_fullspin(100,40,33,1,0,0,0,0)
+A = baseball_fullspin(100,40,33,1,0,0,0,0)
 record_fullspin = A.calculate(0,0,33)
 ax = fig.gca(projection='3d')
 ax.set_xlabel('Horizontal distance (m)', fontsize = 12)
@@ -250,7 +250,7 @@ record_fullspin = A.calculate(0,30,0)
 ax.plot(record_fullspin[0],record_fullspin[2],record_fullspin[1], label = 'Omege vector (0,30,0)')
 record_fullspin = A.calculate(30,0,0)
 ax.plot(record_fullspin[0],record_fullspin[2],record_fullspin[1], label = 'Omege vector (30,0,0)')
-ax.legend()'''
+ax.legend()
 ## ---------------- normal -------------------------  
 '''A = baseball_normal(100, 40, 33, 1, 0, 0, 0, 0)
 record_normal = A.calculate()
@@ -329,7 +329,7 @@ plt.plot(record_wind[0], record_wind[1],'-.',linewidth = 3, label = 'No spin: he
 '''plt.legend(loc = 'upper right', fontsize = 9)
 plt.savefig('chapter2.19_ball.png', dpi = 144)'''
 ## -------------- argprase ------------------------------
-parser = argparse.ArgumentParser()
+'''parser = argparse.ArgumentParser()
 parser.add_argument("velocity", type = float, help= "display a square of a given number")
 parser.add_argument("theta", type = float, help= "the initial batting angle")
 parser.add_argument("omega", type = float, help = "the angular velocity of spin")
@@ -371,5 +371,5 @@ else:
 if args.store:
     A.store()
 else:
-    pass
+    pass'''
 
