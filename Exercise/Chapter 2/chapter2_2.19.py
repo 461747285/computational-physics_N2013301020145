@@ -21,7 +21,8 @@ class baseball_normal:
         self.dt = 0.01
         self.v = v*0.44704
         self.theta = theta
-        self.w = w
+        self.w = w*2*np.pi
+
         
     def calculate(self):
         vx = []
@@ -89,6 +90,9 @@ class baseball_normal:
     
 class baseball_fullspin(baseball_normal):
     def calculate(self, w_x, w_y, w_z):
+        w_x = w_x * 2 * np.pi
+        w_y = w_y * 2 * np.pi
+        w_z = w_z * 2 * np.pi
         vx = []
         vy = []
         vz = []
@@ -226,10 +230,10 @@ class baseball_wind(baseball_normal):
         return self.x, self.y, self.z
         
 
-''''fig = plt.figure(figsize = (8,6))
+fig = plt.figure(figsize = (8,6))
 plt.title('Trajectory of cannon shell')
 plt.xlabel('Horizontal distance (m)', fontsize = 12)
-plt.ylabel('Vertical height (m)', fontsize = 12)'''
+plt.ylabel('Vertical height (m)', fontsize = 12)
 ## ---------------- full spin ---------------------
 '''A = baseball_fullspin(100,40,33,1,0,0,0,0)
 record_fullspin = A.calculate(0,0,33)
@@ -270,13 +274,13 @@ for degree in range(8):
     plt.plot(record_normal[0], record_normal[1], label = 'angle ='+str(data_w[degree])+'degree')
     degree-=1'''
 ## ---------------- different angular velocity ----------------------
-'''data_w = [-30,0,33,60,1200,2000]
+'''data_w = [-30,0,33,60,200,300]
 for degree in range(6):
     A = baseball_normal(100,40,data_w[degree],1,0,0,0,0)
     record_normal = A.calculate()
     plt.plot(record_normal[0], record_normal[1], label = 'angular velocity ='+str(data_w[degree])+'rps')
-    degree-=1'''
-
+    degree-=1
+'''
 ## --------- find the furthest distance-----------------
 '''distance = []
 w_record = []
@@ -313,6 +317,7 @@ plt.title('Trajectory of cannon shell (No spin)')
 plt.xlabel('Horizontal distance (m)', fontsize = 12)
 plt.ylabel('Vertical height (m)', fontsize = 12)
 plt.ylim(0,40)
+plt.xlim(0,140)
 A = baseball_wind(100,40,0,1,0,0,0,0)
 record_wind = A.calculate(4.47,0)
 plt.plot(record_wind[0], record_wind[1],'-.',linewidth = 3, label = 'No spin: tailwind')
@@ -322,7 +327,7 @@ record_wind = A.calculate(-4.47,0)
 plt.plot(record_wind[0], record_wind[1],'-.',linewidth = 3, label = 'No spin: headwind')'''
 ##-------------------------------------------------------
 '''plt.legend(loc = 'upper right', fontsize = 9)
-plt.savefig('chapter2.19.png', dpi = 144)'''
+plt.savefig('chapter2.19_ball.png', dpi = 144)'''
 ## -------------- argprase ------------------------------
 parser = argparse.ArgumentParser()
 parser.add_argument("velocity", type = float, help= "display a square of a given number")
