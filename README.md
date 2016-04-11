@@ -23,9 +23,8 @@ On the other hand, this package can be also used to solve **differential equatio
 - [x] [Exercise_5: Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
 - [x] [Exercise_6: Chapter 2 problem 2.9 & 2.10](https://www.zybuluo.com/355073677/note/331446)
 - [x] [Exercise_7: Chapter 2 problem 2.19 & Visual motion of baseball](https://www.zybuluo.com/355073677/note/339666)
-- [ ] 6.
-- [ ] 7.
-- [ ] 8.
+
+To be continued...
 
 
 
