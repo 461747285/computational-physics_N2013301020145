@@ -59,7 +59,7 @@ class baseball_state:
         deltat = 0.01
         i = 0
         ball.trail = curve(color = ball.color)
-        while ball.pos.y >= 0:
+        while i < len(self.vx):
             rate(50)
             ball.velocity = vector(self.vx[i], self.vy[i], 10*self.vz[i])
             ball.pos = ball.pos + ball.velocity*deltat
@@ -69,7 +69,7 @@ class baseball_state:
 
            
 ### -----------------------------------------------------------------------------------------------------------
-baseball = baseball_state(100,40,20,-20,17,1,0,0,0,0)
+baseball = baseball_state(100,40,20,-20,300,1,0,0,0,0)
 baseball.calculate()
 arrow(pos = (0, 0, 0), axis = (100, 0, 0), shaftwidth = 1, color = color.blue)
 label(text = 'Horizontal distance', pos = (100, 0, 0))
