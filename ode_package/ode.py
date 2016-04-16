@@ -2,14 +2,14 @@
 """
 Created on Thu Mar 17 14:49:37 2016
 @author: AF
-version 4.0
+version 4.01
 """
 # this package involve three numerical methods to solve ordinary differential equation.
 # they are Euler method, Crome-Euler method and Runge-Kutta method
 # reference MATLAB 语言常用算法程序集（第2版）
 
 import math
-import numpy
+import numpy as np
 
 
 class ode:
@@ -21,7 +21,7 @@ class ode:
             self.Y[0] =Y
         else:
             self.Y = Y      # initial y
-        self.N = int(float(b - self.a)/(self.dx))
+        self.N = int(float(b - self.a)/(self.dx)) + 1
         self.data = [[],[]] # store all the datas
            
     def set_fx(self,f,variable_name):                ###setting the function on the right side 
@@ -69,7 +69,6 @@ class ode:
         for l in range(self.number):    ##
             self.y.append([])           ####   setting the initial value
             self.y[l].append(self.Y[l]) ##
-        print self.number
         for i in range(1,self.N):
             for n in range(self.number):
                 self.dep_name[n + 1] = self.dep_name_record[n + 1] + '=' + str(self.y[n][i - 1])
