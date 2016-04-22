@@ -5,7 +5,7 @@ Created on Wed Apr 13 11:01:46 2016
 @author: AF
 """
 
-#import ode as solving_ode
+import ode as solving_ode
 import matplotlib.pyplot as plt
 import time
 
@@ -60,33 +60,32 @@ class harmonic_alpha3(harmonic):
 plt.figure(figsize = (10,6))
 ### --------------- forth-order Runge-Kutta ----------
 #start=time.clock()
-'''
-A = solving_ode.ode(0.1,0,10,(0,1))  
-A.set_fx(('-x','w'),['t','w','x'])
+A = solving_ode.ode(0.1,0,40,(0,1.2))  
+A.set_fx(('-x**5','w'),['t','w','x'])
 rgkt_3_record = A.rgkt_4()[:]
 #end = time.clock()
 #print "read: %f s" % (end - start)
 ### -------------- second-order Runge-Kutta ----------
-rgkt_2_record = A.rgkt_2()[:]
+#rgkt_2_record = A.rgkt_2()[:]
 ### -----------------------------------------------
 #start=time.clock()
-B = harmonic(0.04,0,10,1)
+B = harmonic_alpha3(0.04,0,40,1.2)
 euler_c_record = B.calculate()
-B.find_period()
+#B.find_period()
 #end = time.clock()
-#print "read: %f s" % (end - start)'''
+#print "read: %f s" % (end - start)
 ### ------------- alpha = 3 ----------------------
-amplitude = 0.2
+'''amplitude = 0.8
 for i in range(5):   ## 0.2 0.4 0.6 0.8 1.0
-    C = harmonic_alpha3(0.001, 0, 40, amplitude)
+    C = harmonic_alpha3(0.01, 0, 40, amplitude)
     euler_a_record = C.calculate()
     period = C.find_period()
     plt.plot(euler_a_record[0], euler_a_record[1], label = 'Amplitude:'+str(amplitude))
-    amplitude = amplitude + 0.2
+    amplitude = amplitude + 0.2'''
 ### -----------------------------------------------
-#plt.plot(rgkt_3_record[0],rgkt_3_record[1][1],label = '4th-order Runge-Kutta method')
+plt.plot(rgkt_3_record[0],rgkt_3_record[1][1],label = '4th-order Runge-Kutta method')
 #plt.plot(rgkt_2_record[0],rgkt_2_record[1][1],label = '2nd-order Runge-Kutta method')
-#plt.plot(euler_c_record[0],euler_c_record[1], label = 'Euler_Cromer method')
+plt.plot(euler_c_record[0],euler_c_record[1], label = 'Euler_Cromer method')
 plt.legend(loc = 'upper left')
 plt.savefig('chapter3_3.4.png',dpi = 144)
 plt.show()
