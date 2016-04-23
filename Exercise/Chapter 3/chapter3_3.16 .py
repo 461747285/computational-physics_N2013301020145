@@ -79,7 +79,7 @@ class harmonic:
         pendulum.theta = 0.2
         pendulum.omega = 0
         rope = curve(pos = [roof.pos, pendulum.pos])
-        force_D = arrow(pos = pendulum.pos, axis = (-6*np.cos(self.x_0),-6*np.sin(self.x_0),0), color = color.yellow, shaftwidth=0.5)
+        force_D = arrow(pos = pendulum.pos, axis = (6*np.cos(self.x_0),6*np.sin(self.x_0),0), color = color.yellow, shaftwidth=0.5)
         deltat = 0.04
         t = 0
         i = 0
@@ -90,10 +90,11 @@ class harmonic:
             pendulum.pos = (10*np.sin(pendulum.theta),10-10*np.cos(pendulum.theta),0)
             F = 6*np.sin(2./3*t)
             force_D.pos = pendulum.pos
-            force_D.axis = (-F*np.cos(pendulum.theta),-F*np.sin(pendulum.theta),0)
+            force_D.axis = (F*np.cos(pendulum.theta),F*np.sin(pendulum.theta),0)
             rope.pos = [roof.pos, pendulum.pos]
             t = t + deltat
             i+=1
+        
         
         
 plt.figure(figsize = (18,12))
