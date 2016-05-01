@@ -55,7 +55,7 @@ class harmonic:
         self.w.append(0)
         self.x.append(self.x_0)
         for i in range(1,self.N):
-            self.w.append(self.w[i - 1] - np.sin(self.x[i - 1])*self.dt - 0.5*self.w[i - 1]*self.dt + 1.2*np.sin(2./3*self.t[i - 1])*self.dt)
+            self.w.append(self.w[i - 1] - np.sin(self.x[i - 1])*self.dt - 0.5*self.w[i - 1]*self.dt + 0.5*np.sin(2./3*self.t[i - 1])*self.dt)
             self.x.append(correct_single(self.x[i - 1] + self.w[i] * self.dt))
             self.t.append(self.t[i - 1] + self.dt)
         return self.t, self.x, self.w
@@ -91,6 +91,7 @@ class harmonic:
             F = 6*np.sin(2./3*t)
             force_D.pos = pendulum.pos
             force_D.axis = (F*np.cos(pendulum.theta),F*np.sin(pendulum.theta),0)
+            print force_D.axis
             rope.pos = [roof.pos, pendulum.pos]
             t = t + deltat
             i+=1
