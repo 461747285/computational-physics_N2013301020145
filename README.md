@@ -20,7 +20,8 @@ On the other hand, this package can be also used to solve **differential equatio
 ## Animation of Lorenz Model
 ![figure_lorenz_model](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/Chapter%203/chapter3_lorenz_model.gif)
 ###Acknowledgement:
-   感谢强益华同学提供绘制y=0的相图的原代码
+   感谢强益华同学提供绘制x=0的相图的原代码 
+   
    [Programme Code](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%203/chapter3_lorenz_model.py)
  
 ##Homework list
