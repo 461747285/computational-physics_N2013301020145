@@ -25,13 +25,13 @@ On the other hand, this package can be also used to solve **differential equatio
    [Programme Code](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%203/chapter3_lorenz_model.py)
  
 ##Homework list
-- [x] [Exercise_3: all levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
-- [x] [Exercise_4: Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
-- [x] [Exercise_5: Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
-- [x] [Exercise_6: Chapter 2 problem 2.9 & 2.10](https://www.zybuluo.com/355073677/note/331446)
-- [x] [Exercise_7: Chapter 2 problem 2.19 & Visual motion of baseball](https://www.zybuluo.com/355073677/note/339666)
-- [x] [Exercise_8: Chapter 3 problem 3.4](https://www.zybuluo.com/355073677/note/345564)
-- [x] [Exercise_9: Chapter 3 problem 3.16: Strange attractor](https://www.zybuluo.com/355073677/note/352897)
+- [x] [Exercise_03: All levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
+- [x] [Exercise_04: Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
+- [x] [Exercise_05: Chapter 1 problem 1.6](https://www.zybuluo.com/355073677/note/322726)
+- [x] [Exercise_06: Chapter 2 problem 2.9 & 2.10](https://www.zybuluo.com/355073677/note/331446)
+- [x] [Exercise_07: Chapter 2 problem 2.19 & Visual motion of baseball](https://www.zybuluo.com/355073677/note/339666)
+- [x] [Exercise_08: Chapter 3 problem 3.4](https://www.zybuluo.com/355073677/note/345564)
+- [x] [Exercise_09: Chapter 3 problem 3.16: Strange attractor](https://www.zybuluo.com/355073677/note/352897)
 - [x] [Exercise_10: Chapter 3 problem 3.31: Billiard ball on diverse table](https://www.zybuluo.com/355073677/note/360879)
 - [x] [Exercise_11: Chapter 4 problem 4.11: The percession of Mercury](https://www.zybuluo.com/355073677/note/366943)
 
