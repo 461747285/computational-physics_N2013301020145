@@ -8,13 +8,31 @@ Created on Wed May  4 17:11:36 2016
 import numpy as np
 import matplotlib.pyplot as plt
 import ode as solving_ode
+from visual import *
 
 
 ###  -------- circular orbit -----------------
-'''A = solving_ode.ode(0.01,0,1,(1,0,0,2*np.pi))
-A.set_fx(['vx','-4*np.pi**2*x/(np.sqrt(x**2+y**2))**3','vy','-4*np.pi**2*y/(np.sqrt(x**2+y**2))**3'],['t','x','vx','y','vy'])
+A = solving_ode.ode(0.0001,0,1,(0.47,0,0,8.2))
+A.set_fx(['vx','-4*np.pi**2*x/(np.sqrt(x**2+y**2))**3*(1+0.01/(np.sqrt(x**2+y**2))**2)','vy','-4*np.pi**2*y/(np.sqrt(x**2+y**2))**3*(1+0.01/(np.sqrt(x**2+y**2))**2)'],['t','x','vx','y','vy'])
 data_record = A.rgkt_4()
-plt.figure(figsize = (8,8))
+###  ------ vpython -------------------------
+sun = sphere(pos = (0,0,0),radius = 0.22,color = color.yellow)
+lamp = local_light(pos=(0,0,0), color=color.yellow)
+deltat = 0.0001
+i = 0
+t = 0
+mercury = sphere(pos = (0.47,0,0), radius = 0.01, material = materials.marble)
+mercury.trail = curve(color = color.white)
+while i < len(data_record[1][1]):
+    rate(300)
+    mercury.velocity = vector(data_record[1][1][i], data_record[1][3][i], 0)
+    mercury.pos = mercury.pos + mercury.velocity*deltat
+    mercury.trail.append(pos = mercury.pos)
+    t = t + deltat
+    i+=1
+
+### -----------------------------------------
+'''plt.figure(figsize = (10,8))
 plt.xlabel('x(AU)')
 plt.ylabel('y(AU)')
 plt.plot(data_record[1][0],data_record[1][2])
@@ -36,25 +54,25 @@ plt.show()'''
 
 
 ###  -------Precession: elliptical orbit ---------------- ## r_max = 0.47 AU Kappa = 2.6579 r_min = 0.314AU alpha = 0.01  period = 0.239
-plt.figure(figsize = (16,12))
-plt.subplot(111,polar = True)
-'''e = 0.2
+#plt.figure(figsize = (16,12))
+#plt.subplot(111,polar = True)
+'''e = 0.206
 r_min = 0.314
 r_0 = r_min*(1 + e)/(1 - e)
 A = solving_ode.ode(0.01,0,30*np.pi,(r_0,0))  
 #print 1./(r_min*(1 + e))
 A.set_fx(['v','(2.0/r)*v**2+r-'+str(1./(r_min*(1 + e)))+'*(1 + 0.001/(r**2))*r**2'],['t','r','v'])
 #A.set_fx(['v','(2.0/r)*v**2+r-2.6579*(1 + 0.01/(r**2))*r**2'],['t','r','v'])
-data_record = A.rgkt_4()
-theta_record = []'''
+data_record = A.rgkt_4()'''
+'''theta_record = []
 #r_0 = 0.47
-'''for i in range(len(data_record[1][0]) - 1):
+for i in range(len(data_record[1][0]) - 1):
     if ( data_record[1][0][i] > data_record[1][0][i - 1] and data_record[1][0][i] > data_record[1][0][i + 1]):
         theta_record.append(data_record[0][i])
     if ( data_record[1][0][i] < data_record[1][0][i - 1] and data_record[1][0][i] < data_record[1][0][i + 1]):
         print data_record[1][0][i]
 print theta_record'''
-eccentricities = [0.2,0.5,0.8]
+'''eccentricities = [0.2,0.5,0.8]
 for i in range(3):
     e = eccentricities[i]
     r_min = 0.314
@@ -66,5 +84,5 @@ for i in range(3):
 plt.title('Simulation of the precession of Mercury')
 plt.legend()
 plt.savefig('chapter4_4.11_0.2.png',dpi = 144)
-plt.show()
+plt.show()'''
 
