@@ -11,12 +11,12 @@ import ode as solving_ode
 #from visual import *
 
 ###  -------- circular orbit -----------------
-e = 0.9
+e = 0.99
 r_min = 0.314
 r_0 = r_min*(1 + e)/(1 - e)
 a = r_min/(1 - e)
 v_0 = np.sqrt(4*np.pi**2*(1 - e)**2/(r_min*(1 + e))) 
-A = solving_ode.ode(0.001,0,25,(r_0,0,0,v_0))
+A = solving_ode.ode(0.001,0,50,(r_0,0,0,v_0))
 A.set_fx(['vx','-4*np.pi**2*x/(np.sqrt(x**2+y**2))**3*(1+0.001/(np.sqrt(x**2+y**2))**2)','vy','-4*np.pi**2*y/(np.sqrt(x**2+y**2))**3*(1+0.001/(np.sqrt(x**2+y**2))**2)'],['t','x','vx','y','vy'])
 data_record = A.rgkt_4()
 theta_record = []
