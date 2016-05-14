@@ -34,6 +34,7 @@ On the other hand, this package can be also used to solve **differential equatio
 - [x] [Exercise_09: Chapter 3 problem 3.16: Strange attractor](https://www.zybuluo.com/355073677/note/352897)
 - [x] [Exercise_10: Chapter 3 problem 3.31: Billiard ball on diverse table](https://www.zybuluo.com/355073677/note/360879)
 - [x] [Exercise_11: Chapter 4 problem 4.11: The percession of Mercury](https://www.zybuluo.com/355073677/note/366943)
+- [x] [Exercise_12: Chapter 4 problem 4.18: The Kirkwood Gap](https://www.zybuluo.com/355073677/note/377276)
 
 To be continued...
 
