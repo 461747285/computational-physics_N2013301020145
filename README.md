@@ -17,13 +17,12 @@ On the other hand, this package can be also used to solve **differential equatio
 
  - [*ode.py*](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/ode_package/ode.py)
 
-## Animation of Lorenz Model
+<!---## Animation of Lorenz Model
 ![figure_lorenz_model](https://raw.githubusercontent.com/chenfeng2013301020145/computational-physics_N2013301020145/master/Exercise/Chapter%203/chapter3_lorenz_model.gif)
 ###Acknowledgement:
    感谢强益华同学提供绘制x=0的相图的原代码 
    
-   [Programme Code](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%203/chapter3_lorenz_model.py)
- 
+  [Programme Code](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/Chapter%203/chapter3_lorenz_model.py)-->
 ##Homework list
 - [x] [Exercise_03: All levels](https://github.com/chenfeng2013301020145/computational-physics_N2013301020145/blob/master/Exercise/1st%20assignment.md)
 - [x] [Exercise_04: Chapter 1 problem 1.5](https://www.zybuluo.com/355073677/note/318129)
