@@ -36,6 +36,7 @@ On the other hand, this package can be also used to solve **differential equatio
 - [x] [Exercise_12: Chapter 4 problem 4.18: The Kirkwood Gap](https://www.zybuluo.com/355073677/note/377276)
 - [x] [Exercise_13: Chapter 5 problem 5.7: The Jacobi method v.s. The SOR algorithm](https://www.zybuluo.com/355073677/note/383908)
 - [x] [Exercise_14: Chapter 6 problem 6.15: The realistic string problem](https://www.zybuluo.com/355073677/note/391697)
+- [x] [Final Project: 用轨道能量分析Kirkwood Gap的缝宽](https://www.zybuluo.com/355073677/note/405855)
 
 To be continued...
 
